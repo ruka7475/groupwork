@@ -1,0 +1,29 @@
+.github/workflows/weather.yml
+name: Morning Weather Notification
+
+on:
+  schedule:
+    - cron: "0 2 * * *"  # 日本時間11:00（UTC 2:00）
+  workflow_dispatch:
+
+jobs:
+  run-weather:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run script
+        env:
+          OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+          PUSHBULLET_API_KEY: ${{ secrets.PUSHBULLET_API_KEY }}
+        run: python weather.py
