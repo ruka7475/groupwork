@@ -1,4 +1,3 @@
-.github/workflows/weather.yml
 name: Morning Weather Notification
 
 on:
