@@ -21,6 +21,13 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
+      - name: Show schedule time
+        run: |
+          echo "UTC:"
+          date -u
+          echo "Local:"
+          date
+
       - name: Run script
         env:
           OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
