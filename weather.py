@@ -51,6 +51,8 @@ def send_pushbullet(title, body):
 
 
 def main():
+    print("現在時刻:", datetime.now())
+    
     today = datetime.now().strftime("%Y年%m月%d日")
 
     weather = get_weather()
