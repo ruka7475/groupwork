@@ -1,4 +1,4 @@
-name: Morning Weather Notification Great
+name: Morning Weather Notification
 
 on:
   schedule:
