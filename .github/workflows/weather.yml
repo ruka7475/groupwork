@@ -2,7 +2,7 @@ name: Morning Weather Notification
 
 on:
   schedule:
-    - cron: "*/10 * * * *"  # 日本時間17:00（UTC 8:00）
+    - cron: "0 22 * * *"  # 日本時間7:00（UTC 22:00）
   workflow_dispatch:
 
 jobs:
